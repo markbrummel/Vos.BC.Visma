@@ -89,11 +89,7 @@ table 50049 "Import Visma Log"
             Caption = 'Import DateTime';
             DataClassification = ToBeClassified;
         }
-        field(18; "Row Data"; Text[250]) // TODO Add second field
-        {
-            Caption = 'Row Data';
-            DataClassification = ToBeClassified;
-        }
+
         field(19; "Journal Template Name"; Code[10])
         {
             Caption = 'Journal Template Name';
@@ -102,7 +98,16 @@ table 50049 "Import Visma Log"
         {
             Caption = 'Journal Batch Name';
         }
-
+        field(21; "Row Data"; Text[250])
+        {
+            Caption = 'Row Data';
+            DataClassification = ToBeClassified;
+        }
+        field(22; "Row Data 2"; Text[250])
+        {
+            Caption = 'Row Data';
+            DataClassification = ToBeClassified;
+        }
     }
     keys
     {
