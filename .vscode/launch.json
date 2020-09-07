@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Development",
+            "server": "http://10.1.0.34",
+            "serverInstance": "VG2018DEVNU",
+            "port": 7149,
+            "authentication": "UserPassword"
+        }
+        // ,
+        // {
+        //     "type": "al",
+        //     "request": "launch",
+        //     "name": "Production",
+        //     "server": "http://10.2.1.4",
+        //     "serverInstance": "VG2018PRODNU",
+        //     "port": 7149,
+        //     "authentication": "UserPassword",
+        //     "startupObjectId": 22
+        // }
+    ]
+}
