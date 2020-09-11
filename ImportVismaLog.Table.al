@@ -98,7 +98,7 @@ table 50049 "Import Visma Log"
         {
             Caption = 'Journal Batch Name';
         }
-        field(21; "Row Data"; Text[250])
+        field(18; "Row Data"; Text[250])
         {
             Caption = 'Row Data';
             DataClassification = ToBeClassified;
