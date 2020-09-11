@@ -35,7 +35,6 @@ report 50049 "VOS Import Visma"
                     {
                         ApplicationArea = Basic, Suite;
                         Caption = 'Gen. Journal Template';
-                        //TableRelation = "Gen. Journal Template"; TODO Fix
                         ToolTip = 'Specifies the general journal template that is used by the batch job.';
 
                         trigger OnValidate()
@@ -154,7 +153,8 @@ report 50049 "VOS Import Visma"
             ImportBuffer."Cost Unit" := RemoveTrailingZeroes(COPYSTR(Line, 276, 7));
             ImportBuffer."File Name" := FileName;
             ImportBuffer."User Id" := UserId;
-            ImportBuffer."Row Data" := Line;
+            ImportBuffer."Row Data" := copystr(Line, 1, 250);
+            ImportBuffer."Row Data 2" := copystr(Line, 251);
             ImportBuffer."Journal Batch Name" := GenJnlLine."Journal Batch Name";
             ImportBuffer."Journal Template Name" := GenJnlLine."Journal Template Name";
             ImportBuffer."Import DateTime" := Curdt;
