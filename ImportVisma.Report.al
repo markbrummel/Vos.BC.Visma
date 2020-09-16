@@ -25,6 +25,7 @@ report 50049 "VOS Import Visma"
                         ApplicationArea = Suite;
                         Caption = 'File Name';
                         ToolTip = 'Specifies the name of the file to import.';
+                        AssistEdit=true;
                         trigger OnAssistEdit()
                         BEGIN
                             SelectFileName;
@@ -36,7 +37,7 @@ report 50049 "VOS Import Visma"
                         ApplicationArea = Basic, Suite;
                         Caption = 'Gen. Journal Template';
                         ToolTip = 'Specifies the general journal template that is used by the batch job.';
-
+                        TableRelation = "Gen. Journal Template";
                         trigger OnValidate()
                         begin
                             GenJnlLine."Journal Batch Name" := '';
@@ -120,6 +121,7 @@ report 50049 "VOS Import Visma"
     VAR
         ImportBuffer: Record "Import Visma Log" TEMPORARY;
     BEGIN
+        
         ReadFileIntoBuffer(ImportBuffer);
         MapBufferToGenJnlLn(ImportBuffer);
         SaveLog(ImportBuffer);
