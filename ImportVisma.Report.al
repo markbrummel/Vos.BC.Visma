@@ -98,13 +98,10 @@ report 50049 "VOS Import Visma"
         clear(FileName);
     end;
 
-
-
     trigger OnPreReport()
     BEGIN
         TestMandatoryFields;
         //clear(FileName);
-
     END;
 
     trigger OnPostReport()
@@ -185,10 +182,6 @@ report 50049 "VOS Import Visma"
                     VALIDATE("Gen. Prod. Posting Group", '');
                     VALIDATE("VAT Bus. Posting Group", '');
                     VALIDATE("VAT Prod. Posting Group", '');
-                    // if ImportBuffer.Quantity <> 0 then
-                    //     VALIDATE("Quantity", ImportBuffer."Quantity")
-                    // else
-                    //     Validate(Quantity, 1);
                     VALIDATE("Amount", ImportBuffer."Amount");
                     Description := ImportBuffer.Description;
                     INSERT(TRUE);
@@ -262,7 +255,6 @@ report 50049 "VOS Import Visma"
         EXIT(Amount);
     END;
 
-
     procedure RemoveTrailingZeroes(Value: Text[30]): Text[30]
     BEGIN
         EXIT(DELCHR(Value, '<', '0'));
@@ -277,7 +269,6 @@ report 50049 "VOS Import Visma"
         GenJnlLine.SETRANGE("Journal Batch Name", genJnlLine."Journal Batch Name");
         IF NOT GenJnlLine.ISEMPTY THEN
             ERROR(JournalNotEmpty);
-
     END;
 
     procedure ReplaceGLAccount(Value: Code[20]): Code[20]
@@ -306,6 +297,5 @@ report 50049 "VOS Import Visma"
         ReplaceText: Label 'Grootboek %1 is niet gevonden, welk nummer wilt u in plaats daarvan gebruiken?';
         PleaseFillOutReqForm: Label 'De opties zijn niet compleet.';
         JournalNotEmpty: Label 'Het dagboek is niet leeg.';
-
 
 }
