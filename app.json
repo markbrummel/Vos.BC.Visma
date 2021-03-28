@@ -5,7 +5,6 @@
     "brief": "",
     "description": "",
     "version": "1.0.0.0",
-    "compatibilityId": "1.0.0.0",
     "privacyStatement": "",
     "EULA": "",
     "help": "",
@@ -14,11 +13,12 @@
     "capabilities": [],
     "dependencies": [],
     "screenshots": [],
-    "platform": "11.0.0.0",
-    "application": "11.0.0.0",
+    "platform": "14.0.0.0",
+    "application": "14.0.0.0",
     "idRange": {
       "from": 50049,
       "to": 50049
     },
-    "showMyCode": true
+    "showMyCode": true,
+    "runtime": "3.2"
   }
